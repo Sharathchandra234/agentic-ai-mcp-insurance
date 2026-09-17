@@ -1,0 +1,69 @@
+FRAUD INVESTIGATION AND RISK ASSESSMENT GUIDELINES
+
+Document ID:
+FRAUD-GUIDE-001
+
+Version:
+2026.1
+
+1. PURPOSE
+
+These guidelines describe how fraud risk indicators may be considered during insurance claim investigation.
+
+2. RISK INDICATORS
+
+Potential risk indicators include:
+
+- High claim frequency.
+- Repeated claims involving similar circumstances.
+- Unusual claim amounts.
+- Repair-cost inconsistencies.
+- Vehicle information inconsistencies.
+- Customer information inconsistencies.
+- Incident descriptions that conflict with available evidence.
+- Suspicious or incomplete documentation.
+
+3. MACHINE LEARNING RISK SCORES
+
+Machine-learning systems can estimate the probability of a claim being associated with patterns observed in training data.
+
+A fraud probability should be interpreted as a risk indicator rather than proof of fraud.
+
+4. RISK LEVELS
+
+For demonstration purposes, an internal risk system may categorize model output as:
+
+Low:
+Fraud probability below 40%.
+
+Medium:
+Fraud probability from 40% to below 70%.
+
+High:
+Fraud probability of 70% or above.
+
+These thresholds are demonstration thresholds and should not be interpreted as regulatory standards.
+
+5. MODEL LIMITATIONS
+
+Model performance depends on:
+
+- Training data quality.
+- Feature quality.
+- Data distribution.
+- Model design.
+- Changes in claim patterns.
+
+A model trained on synthetic or demonstration data should not be assumed to represent real-world insurer fraud behavior.
+
+6. HUMAN REVIEW
+
+Claims with elevated risk indicators should receive appropriate human review.
+
+Investigators should examine the evidence before reaching a conclusion.
+
+7. FINAL DECISION
+
+An automated fraud-risk score must not independently determine whether a claim is fraudulent.
+
+Final decisions should follow applicable policy terms, investigation procedures, evidence, and authorized human review.

@@ -1,0 +1,106 @@
+P&C CLAIMS INVESTIGATION GUIDELINES
+
+Document ID:
+CLAIMS-GUIDE-001
+
+Version:
+2026.1
+
+1. PURPOSE
+
+These guidelines provide a general framework for investigating motor insurance claims.
+
+They should be used together with the applicable insurance policy and claim-specific evidence.
+
+2. INITIAL VERIFICATION
+
+The investigator should verify:
+
+- Claim ID.
+- Policy number.
+- Policy status.
+- Policy coverage.
+- Customer identity.
+- Vehicle identity.
+- Incident date.
+- Reported claim amount.
+
+3. POLICY VERIFICATION
+
+Before assessing coverage, confirm:
+
+- The policy was active on the relevant incident date.
+- The reported event falls within the policy coverage.
+- Applicable deductibles and limits.
+- Relevant exclusions.
+
+4. CUSTOMER VERIFICATION
+
+Review available customer information, including:
+
+- Customer history.
+- Previous claims.
+- Customer relationship with the insurer.
+- Relevant claim patterns.
+
+Previous claims should be treated as contextual information and not as proof of fraudulent behavior.
+
+5. VEHICLE VERIFICATION
+
+Verify:
+
+- Vehicle registration.
+- Vehicle make and model.
+- Vehicle year.
+- Vehicle ownership.
+- Reported vehicle condition.
+- Repair estimates.
+
+6. DAMAGE VERIFICATION
+
+Compare:
+
+- Reported incident circumstances.
+- Photographs.
+- Inspection findings.
+- Repair estimates.
+- Repair invoices.
+
+Material discrepancies should be investigated.
+
+7. FRAUD RISK INDICATORS
+
+Potential indicators may include:
+
+- Unusual claim frequency.
+- Large claim amount relative to available evidence.
+- Significant repair-cost discrepancies.
+- Repeated similar claims.
+- Contradictory incident descriptions.
+- Suspicious documentation.
+
+These indicators should trigger further investigation rather than an automatic fraud determination.
+
+8. AI AND ML ASSISTANCE
+
+Machine-learning models may be used to prioritize claims for additional review.
+
+A model prediction represents a risk signal and should not be treated as definitive proof of fraud.
+
+Model outputs should be reviewed together with policy terms, claim evidence, and investigation findings.
+
+9. HUMAN REVIEW
+
+Final claim decisions should be made by authorized claims professionals.
+
+AI systems should assist investigation and decision support rather than independently approving or rejecting claims.
+
+10. INVESTIGATION SUMMARY
+
+A final investigation summary should clearly separate:
+
+- Facts obtained from records.
+- Applicable policy provisions.
+- Model-generated risk indicators.
+- Investigator observations.
+- Recommended next steps.
