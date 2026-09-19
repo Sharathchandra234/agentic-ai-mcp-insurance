@@ -1,0 +1,7 @@
+google-genai
+mcp
+neo4j
+sentence-transformers
+faiss-cpu
+scikit-learn
+numpy
