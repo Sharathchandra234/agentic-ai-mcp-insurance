@@ -6,6 +6,12 @@ import faiss
 import joblib
 import pandas as pd
 
+from graph_queries import (
+    get_claim_network,
+    get_customer_claims,
+    get_vehicle_claims,
+)
+
 from sentence_transformers import SentenceTransformer
 from mcp.server.mcpserver import MCPServer
 
@@ -658,80 +664,65 @@ def search_policy_documents(
         "result_count":
             len(results)
     }
+# ============================================================
+# TOOL 8 — NEO4J KNOWLEDGE GRAPH
+# ============================================================
 
+@mcp.tool()
+def query_knowledge_graph(
+    operation: str,
+    entity_id: str
+) -> dict:
     """
-    Search insurance policy documents using
-    semantic similarity and return relevant sections.
+    Query the Neo4j insurance knowledge graph.
+
+    Supported operations:
+    - claim_network
+    - customer_claims
+    - vehicle_claims
     """
 
-    # ========================================================
-    # CREATE QUERY EMBEDDING
-    # ========================================================
+    try:
 
-    query_embedding = embedding_model.encode(
-        [query],
-        convert_to_numpy=True
-    )
+        if operation == "claim_network":
 
-    query_embedding = query_embedding.astype(
-        "float32"
-    )
+            results = get_claim_network(entity_id)
 
-    # ========================================================
-    # NORMALIZE FOR COSINE SIMILARITY
-    # ========================================================
+        elif operation == "customer_claims":
 
-    faiss.normalize_L2(
-        query_embedding
-    )
+            results = get_customer_claims(entity_id)
 
-    # ========================================================
-    # SEARCH VECTOR DATABASE
-    # ========================================================
+        elif operation == "vehicle_claims":
 
-    similarities, indices = rag_index.search(
-        query_embedding,
-        top_k
-    )
+            results = get_vehicle_claims(entity_id)
 
-    results = []
+        else:
 
-    for similarity, index_id in zip(
-        similarities[0],
-        indices[0]
-    ):
+            return {
+                "success": False,
+                "error": f"Unsupported operation: {operation}",
+                "supported_operations": [
+                    "claim_network",
+                    "customer_claims",
+                    "vehicle_claims"
+                ]
+            }
 
-        if index_id == -1:
-            continue
+        return {
+            "success": True,
+            "operation": operation,
+            "entity_id": entity_id,
+            "results": results
+        }
 
-        chunk = rag_metadata[index_id]
+    except Exception as e:
 
-        results.append({
-
-            "filename":
-                chunk["filename"],
-
-            "chunk_id":
-                chunk["chunk_id"],
-
-            "cosine_similarity":
-                round(
-                    float(similarity),
-                    4
-                ),
-
-            "text":
-                chunk["text"]
-        })
-
-    return {
-
-        "query":
-            query,
-
-        "results":
-            results
-    }
+        return {
+            "success": False,
+            "operation": operation,
+            "entity_id": entity_id,
+            "error": str(e)
+        }
 
 
 # ============================================================
@@ -756,7 +747,7 @@ if __name__ == "__main__":
     )
 
     print(
-        "Tools available: 7",
+        "Tools available: 8",
         file=sys.stderr
     )
 
